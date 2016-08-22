@@ -1,0 +1,29 @@
+{
+  "name": "tt",
+  "version": "1.0.0",
+  "description": "tiny twitter command line tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appcrash/twitter-cli.git"
+  },
+  "keywords": [
+    "twitter",
+    "proxy"
+  ],
+  "author": "Yuhui",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/appcrash/twitter-cli/issues"
+  },
+  "homepage": "https://github.com/appcrash/twitter-cli#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "oauth-1.0a": "^1.0.1",
+    "querystring": "^0.2.0",
+    "request": "^2.74.0"
+  }
+}
