@@ -80,8 +80,13 @@ function update_status(status) {
 }
 
 
-if (argv['l']) {
-  const count = argv['l'] || 10;
+var arg_count = argv['l'];
+
+if (arg_count) {
+  var count = 10;
+  if (arg_count === parseInt(arg_count,10)) {
+    count = arg_count
+  }
   user_timeline(count);
 } else if (argv._.length > 0) {
   var status = argv._.join('');
