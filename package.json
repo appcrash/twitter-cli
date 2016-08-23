@@ -1,6 +1,6 @@
 {
   "name": "twcli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tiny twitter command line tool",
   "main": "app.js",
   "scripts": {
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/appcrash/twitter-cli.git"
   },
-  "bin" : {
-    "tt" : "./app.js"
+  "bin": {
+    "tt": "./app.js"
   },
   "keywords": [
     "twitter",
@@ -26,7 +26,6 @@
   "dependencies": {
     "minimist": "^1.2.0",
     "oauth-1.0a": "^1.0.1",
-    "querystring": "^0.2.0",
     "request": "^2.74.0"
   }
 }

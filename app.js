@@ -3,7 +3,6 @@
 var argv = require('minimist')(process.argv.slice(2));
 var request = require('request');
 var OAuth = require('oauth-1.0a');
-var qs = require('querystring');
 
 
 var config_json = require(`${process.env.HOME}/.tt.json`);
@@ -47,7 +46,12 @@ function user_timeline(count) {
     method : request_data.method,
     headers: oauth.toHeader(oauth.authorize(request_data, token))
   },function(error, response, body) {
-    console.log(body);
+    if (!error && response.statusCode == 200) {
+      var data = JSON.parse(body);
+      data.forEach(s => {
+        console.log(s.text);
+      })
+    }
   });
 }
 
@@ -57,7 +61,7 @@ function update_status(status) {
     url : build_url(rest_base,path),
     method : 'POST',
     data : {
-      status : qs.escape(status)
+      status : status
     }
   }
   var reverse_path = build_url(reverse_proxy,path);
@@ -67,16 +71,20 @@ function update_status(status) {
     method : request_data.method,
     form: oauth.authorize(request_data, token)
   },function(error, response, body) {
-    console.log(body);
+    if (!error && response.statusCode == 200) {
+      console.log('Done');
+    } else {
+      console.log('publish tweet error');
+    }
   });
 }
 
 
 if (argv['l']) {
-  const count = argv['l'] || 20;
+  const count = argv['l'] || 10;
   user_timeline(count);
 } else if (argv._.length > 0) {
-  var status = argv._[0];
+  var status = argv._.join('');
   update_status(status);
 }
 
