@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var argv = require('minimist')(process.argv.slice(2));
 var request = require('request');
 var OAuth = require('oauth-1.0a');

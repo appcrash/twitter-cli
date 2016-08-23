@@ -1,5 +1,5 @@
 {
-  "name": "tt",
+  "name": "twcli",
   "version": "1.0.0",
   "description": "tiny twitter command line tool",
   "main": "app.js",
@@ -10,11 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/appcrash/twitter-cli.git"
   },
+  "bin" : {
+    "tt" : "./app.js"
+  },
   "keywords": [
     "twitter",
     "proxy"
   ],
-  "author": "Yuhui",
+  "author": "YH",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/appcrash/twitter-cli/issues"
