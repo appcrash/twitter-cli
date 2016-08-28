@@ -1,6 +1,6 @@
 {
   "name": "twcli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "tiny twitter command line tool",
   "main": "app.js",
   "scripts": {
