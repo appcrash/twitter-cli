@@ -5,7 +5,7 @@ var request = require('request');
 var OAuth = require('oauth-1.0a');
 
 
-var config_json = require(`${process.env.HOME}/.tt.json`);
+var config_json = require(getUserHome() + '/.tt.json');
 
 
 var oauth = OAuth({
@@ -27,7 +27,9 @@ if (reverse_proxy[reverse_proxy.length -1] !== '/') {
   reverse_proxy += '/';
 }
 
-
+function getUserHome() {
+  return process.env.HOME || process.env.USERPROFILE;
+}
 
 function build_url(base_url,path) {
   return base_url + path.replace(/^\//,'');
