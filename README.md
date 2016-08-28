@@ -19,11 +19,11 @@ Show the latest 10 tweets.
 Config file is named ~/.tt.json like:
 ```json
 {
-    consumer_key: "",
-    consumer_secret: "",
-    token_key: "",
-    token_secret: "",
-    reverse_proxy: ""
+    "consumer_key": "",
+    "consumer_secret": "",
+    "token_key": "",
+    "token_secret": "",
+    "reverse_proxy": ""
 }
 ```
 
