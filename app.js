@@ -3,6 +3,7 @@
 var argv = require('minimist')(process.argv.slice(2));
 var request = require('request');
 var OAuth = require('oauth-1.0a');
+var colors = require('colors');
 
 
 var config_json = require(getUserHome() + '/.tt.json');
@@ -51,7 +52,8 @@ function user_timeline(count) {
     if (!error && response.statusCode == 200) {
       var data = JSON.parse(body);
       data.forEach(s => {
-        console.log(s.text);
+        var output = s.text.red + ' '.repeat(20) + s.created_at.yellow;
+        console.log(output);
       })
     }
   });
