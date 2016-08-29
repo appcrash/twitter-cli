@@ -4,6 +4,9 @@ var argv = require('minimist')(process.argv.slice(2));
 var request = require('request');
 var OAuth = require('oauth-1.0a');
 var colors = require('colors');
+var moment = require('moment');
+var table = require('text-table')
+var wcwidth = require('wcwidth');
 
 
 var config_json = require(getUserHome() + '/.tt.json');
@@ -51,10 +54,18 @@ function user_timeline(count) {
   },function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var data = JSON.parse(body);
+      var list = [];
       data.forEach(s => {
-        var output = s.text.red + ' '.repeat(20) + s.created_at.yellow;
-        console.log(output);
+        var m = moment(new Date(s.created_at));
+        list.push([s.text.red,m.format("YYYY/MM/DD  HH:mm:ss").yellow]);
       })
+
+      console.log(table(list,{
+        align : ['l','r'],
+        stringLength : function(s) {
+          return wcwidth(s);
+        }
+      }));
     }
   });
 }

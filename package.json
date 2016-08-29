@@ -26,7 +26,10 @@
   "dependencies": {
     "colors": "^1.1.2",
     "minimist": "^1.2.0",
+    "moment": "^2.14.1",
     "oauth-1.0a": "^1.0.1",
-    "request": "^2.74.0"
+    "request": "^2.74.0",
+    "text-table": "^0.2.0",
+    "wcwidth": "^1.0.1"
   }
 }
