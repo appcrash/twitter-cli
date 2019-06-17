@@ -31,6 +31,12 @@ if (reverse_proxy[reverse_proxy.length -1] !== '/') {
   reverse_proxy += '/';
 }
 
+
+// if http proxy is set
+if (!!config_json.http_proxy) {
+    request = request.defaults({'proxy' : config_json.http_proxy});
+}
+
 function getUserHome() {
   return process.env.HOME || process.env.USERPROFILE;
 }

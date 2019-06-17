@@ -24,6 +24,7 @@ Config file is named ~/.tt.json like:
     "token_key": "",
     "token_secret": "",
     "reverse_proxy": ""
+    "http_proxy": ""
 }
 ```
 
@@ -38,3 +39,5 @@ location /twitter/ {
     proxy_pass https://api.twitter.com/1.1/;
 }
 ```
+
+if **http_proxy** is set, it would be used and is independent of **reverse_proxy**
