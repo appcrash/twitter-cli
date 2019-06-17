@@ -23,7 +23,7 @@ Config file is named ~/.tt.json like:
     "consumer_secret": "",
     "token_key": "",
     "token_secret": "",
-    "reverse_proxy": ""
+    "reverse_proxy": "",
     "http_proxy": ""
 }
 ```
@@ -40,4 +40,4 @@ location /twitter/ {
 }
 ```
 
-if **http_proxy** is set, it would be used and is independent of **reverse_proxy**
+if **http_proxy** is set, it would be used and is independent of **reverse_proxy**.
